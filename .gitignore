@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+
+# Datos (No subir CSVs pesados)
+data/raw/*.csv
+data/processed/*.csv
+data/curated/*.csv
+test/data_test/raw_test/*.csv
+
+# Entornos virtuales
+venv/
+.env
