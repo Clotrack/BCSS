@@ -1,0 +1,12 @@
+apiVersion: 1
+
+datasources:
+  - name: PostgreSQL-BCSS  # El nombre que se visualizará en Grafana
+    type: postgres
+    url: db:5432           # El nombre del servicio DDBB en docker-compose
+    database: base_de_datos
+    user: user
+    password: password
+    jsonData:
+      sslmode: 'disable' # Para entornos locales/desarrollo
+      postgresVersion: 15 # La versión usanda

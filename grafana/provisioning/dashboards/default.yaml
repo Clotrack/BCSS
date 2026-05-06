@@ -1,0 +1,9 @@
+apiVersion: 1
+
+providers:
+  - name: 'Dashboards Automáticos'
+    type: file
+    disableDeletion: false
+    editable: true
+    options:
+      path: /var/lib/grafana/dashboards  # Esta es la ruta DENTRO del contenedor
