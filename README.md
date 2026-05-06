@@ -2,6 +2,8 @@
 Clasificador de sistemas estelares (Borg)
 
 ### Estructura del proyecto
+
+```text
 BCSS/
 ├── .devcontainer/
 │   └── docker-compose.yml          # Creacion de los contenedores de Docker
@@ -31,8 +33,7 @@ BCSS/
 │   ├── planets_eda.py
 │   └── stars_eda.py
 ├── test/                           # Pruebas unitarias del sistema
-│   └── gaia_clean_test.ipynb
-│   
+│   └── gaia_clean_test.ipynb   
 ├── .gitignore
 ├── LICENSE
 ├── main.py                         # Orquestador principal del pipeline
