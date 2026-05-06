@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Python
 __pycache__/
 *.pyc
@@ -11,3 +12,28 @@ test/data_test/raw_test/*.csv
 # Entornos virtuales
 venv/
 .env
+=======
+### AL ###
+#Template for AL projects for Dynamics 365 Business Central
+#launch.json folder
+.vscode/
+#Cache folder
+.alcache/
+#Symbols folder
+.alpackages/
+#Snapshots folder
+.snapshots/
+#Testing Output folder
+.output/
+#Extension App-file
+*.app
+#Rapid Application Development File
+rad.json
+#Translation Base-file
+*.g.xlf
+#License-files
+*.bclicense
+*.flf
+#Test results file
+TestResults.xml
+>>>>>>> 7fbdba9fa84fb58916d5e1b9c453c78330e49d1c
