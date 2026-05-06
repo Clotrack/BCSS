@@ -1,9 +1,14 @@
 import pandas as pd
 from pathlib import Path
 
-BASE_PATH = Path().resolve()
-DATA_RAW = BASE_PATH / ".." / "data" / "raw"
-DATA_PROCESSED = BASE_PATH / ".." / "data" / "processed"
+# __file__ es la ubicación de este script (gaia_clean.py)
+# .parent nos sube a la carpeta 'script'
+# .parent de nuevo nos sube a la raíz 'proyectoBCSS'
+BASE_PATH = Path(__file__).resolve().parent.parent
+
+# Ahora las rutas serán sólidas como una roca
+DATA_RAW = BASE_PATH / "data" / "raw"
+DATA_PROCESSED = BASE_PATH / "data" / "processed"
 
 DATA_PROCESSED.mkdir(parents=True, exist_ok=True)
 
