@@ -16,7 +16,7 @@ def main():
     print("INICIANDO PIPELINE DEL PROYECTO BCSS CRUCEMOS LOS DEDOS...\n")
 
     # 1. Crear las tablas base
-    run_script("data/createBBDD_estructure.py")
+    #run_script("data/createBBDD_estructure.py")
 
     # Procesos ETL
     # 2. Cargar datos en Raw (Ingesta) Conectarse y descargar datos de la NASA
