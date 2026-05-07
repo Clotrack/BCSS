@@ -21,7 +21,12 @@ BCSS/
 │   ├── charge_match.py
 │   ├── charge_nasa.py
 │   └── create_view.py
-├── notebook/                       # Descatalogado con script main.py
+├── grafana/
+│   ├── dashboards/                     # Ficheros de configuracion dashboard .json 
+│   ├── provisioning/                 
+│       ├── dashboard/dafoult.yaml      # Configurar rutas dashboard a contenedor grafana
+│       └── datasources/postgres.yaml   # Configurar conexion Base de datos a grafana
+├── notebook/                           # Descatalogado con script main.py
 │   ├── gaia_clean.ipynb
 │   ├── nasa_clean.ipynb
 │   ├── planets_eda.ipynb
