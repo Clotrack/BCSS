@@ -4,7 +4,7 @@ datasources:
   - name: PostgreSQL-BCSS  # El nombre que se visualizará en Grafana
     type: postgres
     url: db:5432           # El nombre del servicio DDBB en docker-compose
-    database: base_de_datos
+    database: BCSS
     user: user
     password: password
     jsonData:

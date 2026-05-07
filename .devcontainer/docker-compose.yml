@@ -26,9 +26,9 @@ services:
     volumes:
       - grafana_data:/var/lib/grafana
       # Mapea carpeta de configuración (dashboards y datasources)
-      - ./grafana/provisioning:/etc/grafana/provisioning
+      - ../grafana/provisioning:/etc/grafana/provisioning
       # Mapea carpeta dashboards guardas en archivos JSON
-      - ./grafana/dashboards:/var/lib/grafana/dashboards
+      - ../grafana/dashboards:/var/lib/grafana/dashboards
 volumes:
   postgres_data:
   grafana_data:
