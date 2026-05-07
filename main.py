@@ -3,13 +3,27 @@ import sys
 import time
 
 def run_script(script_name):
-    print(f"🚀 Ejecutando: {script_name}...")
+    header = f" EJECUTANDO: {script_name} "
+    # Línea decorativa del mismo ancho que el mensaje
+    border = "=" * len(header)
+    
+    print(f"\n{border}")
+    print(header)
+    print(f"{border}\n")
+
     try:
         # Ejecuta el script y espera a que termine
         result = subprocess.run([sys.executable, script_name], check=True)
-        print(f"{script_name} finalizado con éxito.\n")
+        
+        # Línea de cierre
+        footer = f"{script_name} finalizado con éxito "
+        print(f"\n{footer}")
+        print("-" * len(footer))
+        
     except subprocess.CalledProcessError as e:
-        print(f"Error al ejecutar {script_name}: {e}")
+        print(f"\n❌ ERROR CRÍTICO en {script_name}")
+        print(f"Detalles: {e}")
+        print("!" * 50)
         sys.exit(1)
 
 def main():
