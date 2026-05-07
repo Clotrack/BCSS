@@ -3,6 +3,7 @@ apiVersion: 1
 datasources:
   - name: PostgreSQL-BCSS  # El nombre que se visualizará en Grafana
     type: postgres
+    uid: bcss-db-id        # ID fijo solución dashboards run query auto
     url: db:5432           # El nombre del servicio DDBB en docker-compose
     database: BCSS
     user: user
