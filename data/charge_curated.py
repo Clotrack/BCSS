@@ -5,7 +5,7 @@ from sqlalchemy import create_engine
 engine = create_engine("postgresql://user:password@localhost:5432/BCSS")
 
 # Configuraciones de rutas (pathlib resuelve conflictos rutas linux y windows)
-BASE_PATH = Path().resolve()
+BASE_PATH = Path(__file__).resolve().parent
 DATA_CURATED = BASE_PATH / "curated"
 
 df_planet = pd.read_csv(DATA_CURATED / "planet_type_curated.csv")
