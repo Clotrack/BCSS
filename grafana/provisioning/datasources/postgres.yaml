@@ -6,7 +6,11 @@ datasources:
     url: db:5432           # El nombre del servicio DDBB en docker-compose
     database: BCSS
     user: user
-    password: password
+   # IMPORTANTE: Borrada la línea 'password: password' evitado fallo de conexion
+    secureJsonData:
+      password: "password"
     jsonData:
-      sslmode: 'disable' # Para entornos locales/desarrollo
-      postgresVersion: 15 # La versión usanda
+      sslmode: 'disable'
+      postgresVersion: 15
+      timescaledb: false
+    editable: true  # <--- ESTO permitirá editar en la UI si algo falla en la conexión
