@@ -4,10 +4,13 @@ import numpy as np
 from pathlib import Path
 from sqlalchemy import create_engine, text
 
-# Configuraciones de rutas (pathlib resuelve conflictos rutas linux y windows)
-BASE_PATH = Path().resolve()
-DATA_PROCESSED = BASE_PATH / ".." / "data" / "processed"
-DATA_CURATED = BASE_PATH / ".." / "data" / "curated"
+# __file__ es la ubicación de este script (gaia_clean.py)
+# .parent nos sube a la carpeta 'script'
+# .parent de nuevo nos sube a la raíz 'proyectoBCSS'
+BASE_PATH = Path(__file__).resolve().parent.parent
+
+DATA_PROCESSED = BASE_PATH / "data" / "processed"
+DATA_CURATED = BASE_PATH / "data" / "curated"
 
 DATA_CURATED.mkdir(parents=True, exist_ok=True)
 
