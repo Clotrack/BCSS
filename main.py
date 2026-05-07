@@ -33,8 +33,8 @@ def main():
 
     # Procesos EDA y generación de archivos Curated
     # 5. Asegúrate de que tus notebooks estén convertidos a .py o usa scripts
-    run_script("scripts/stars_eda.py")
-    run_script("scripts/planets_eda.py")
+    run_script("script/stars_eda.py")
+    run_script("script/planets_eda.py")
 
     # 6. Cargar datos Curated en Postgres
     run_script("data/charge_curated.py")
