@@ -89,7 +89,7 @@ Este proceso puede tardar varios minutos la primera vez, ya que Docker debe:
 
 Cuando finalice, veremos varios puertos abiertos en la pestaña Ports y los servicios estarán operativos.
 
-![Contenedores operativos](img/Fig18Manualpuertos.png)
+![Contenedores operativos](img/ManualPuertos.png)
 
 ---
 
