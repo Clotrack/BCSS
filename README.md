@@ -6,6 +6,19 @@ Clasificador de sistemas estelares (Borg)
 Bienvenido al repositorio del proyecto BCSS.  
 Este entorno ha sido diseñado para facilitar la puesta en marcha tanto en entorno local como mediante GitHub Codespaces, utilizando contenedores Docker para garantizar una instalación rápida, reproducible y consistente.
 
+## Índice
+
+- [Tecnologías utilizadas](#-tecnologías-utilizadas)
+- [Estructura del proyecto](#-estructura-del-proyecto)
+- [Instalación del proyecto](#-instalación-del-proyecto)
+- [Manual de Usuario](#-manual-de-usuario)
+- [Tabla de comandos útiles](#️-tabla-de-comandos-útiles)
+- [Acceso a Grafana](#-acceso-a-grafana)
+- [API REST](#-api-rest)
+- [Características](#-características)
+- [Futuras mejoras](#-futuras-mejoras)
+- [Autor](#-autor)
+
 ---
 
 ## Tecnologías utilizadas
@@ -83,11 +96,11 @@ Ejecutamos el siguiente comando:
 
 Este proceso puede tardar varios minutos la primera vez, ya que Docker debe:
 
-    * Descargar imágenes
-    * Instalar dependencias
-    * Crear contenedores
-    * Configurar servicios
-    * Inicializar Grafana y la base de datos
+* Descargar imágenes
+* Instalar dependencias
+* Crear contenedores
+* Configurar servicios
+* Inicializar Grafana y la base de datos
 
 Cuando finalice, veremos varios puertos abiertos en la pestaña Ports y los servicios estarán operativos.
 
@@ -120,9 +133,9 @@ Cuando finalice, veremos varios puertos abiertos en la pestaña Ports y los serv
 
 Una vez desplegados los contenedores:
 
-    1. Abrimos una nueva terminal
-    2. Nos aseguramos de estar en la carpeta raíz del proyecto
-    3. Ejecutamos el script principal
+1. Abrimos una nueva terminal
+2. Nos aseguramos de estar en la carpeta raíz del proyecto
+3. Ejecutamos el script principal
 
 Windows: 
 
@@ -152,13 +165,13 @@ Cuando el script termine correctamente, el sistema estará completamente operati
 
 Este apartado describe el uso de:
 
-    * Grafana
-    * API REST del proyecto
+* Grafana
+* API REST del proyecto
 
 Se asume que:
 
-✅ Los contenedores Docker están funcionando
-✅ El script main.py se ha ejecutado correctamente
+* ✔️ Los contenedores Docker están funcionando
+* ✔️ El script main.py se ha ejecutado correctamente
 
 ### Acceso a Grafana
 
@@ -182,9 +195,9 @@ Las credenciales por defecto son:
 
 Tras iniciar sesión:
 
-    * Ignoramos el aviso de seguridad
-    * Pulsamos Skip
-    * Cerramos el asistente de bienvenida
+* Ignoramos el aviso de seguridad
+* Pulsamos Skip
+* Cerramos el asistente de bienvenida
 
 ###  Configuración de la base de datos
 
@@ -192,10 +205,10 @@ Grafana puede arrancar antes que PostgreSQL y la conexión inicial puede no esta
 
 Para solucionarlo:
 
-    1. Ir al menú lateral izquierdo
-    2. Entrar en: 'Connections > Data Sources'
-    3. Seleccionar PostgreSQL
-    4. Pulsar: 'Save & Test'
+1. Ir al menú lateral izquierdo
+2. Entrar en: 'Connections > Data Sources'
+3. Seleccionar PostgreSQL
+4. Pulsar: 'Save & Test'
 
 Si todo es correcto aparecerá un mensaje verde confirmando la conexión.
 
@@ -209,17 +222,17 @@ En el menú lateral izquierdo: 'Dashboards'
 
 Encontraremos los cuadros de mando ya configurados:
 
-    * Datos procesados
-    * Datos EDA / Curados
+* Datos procesados
+* Datos EDA / Curados
 
 ![Cuadros de mando personalizados](img/ManualDashboardsGeneral.png)
 
 Entramos en cualquiera de ellos y Al entrar por primera vez es posible que algunas gráficas aparezcan vacías o con errores.
 
 Pasos para refrescar
-    1. Pulsar los tres puntos `⋮`
-    2. Seleccionar: 'Edit'
-    3. Pulsar boto ubicado junto al rango temporal: 'Refresh'
+1. Pulsar los tres puntos `⋮`
+2. Seleccionar: 'Edit'
+3. Pulsar boto ubicado junto al rango temporal: 'Refresh'
 
 De no haberse visualizado aun los datos seguir con el siguiente paso sino pasar este suguiente paso.
 
@@ -255,12 +268,37 @@ Entraremos automáticamente en la documentación interactiva Swagger UI.
 
 Desde ella podremos:
 
-    * Consultar endpoints
-    * Ejecutar peticiones
-    * Descargar datos JSON
-    * Explorar la base de datos
+* Consultar endpoints
+* Ejecutar peticiones
+* Descargar datos JSON
+* Explorar la base de datos
 
 ![API pantalla MAIN](img/ManualAPIMain.png)
 
 ![API Descarga de datos JSON](img/ManualAPIDescarga.png)
 
+---
+
+### Características
+* API REST desarrollada con FastAPI
+* Visualización de datos mediante Grafana
+* Persistencia de datos con PostgreSQL
+* Infraestructura basada en Docker
+* Compatible con GitHub Codespaces
+* Dashboards interactivos
+* Arquitectura reproducible y portable
+
+---
+
+### Futuras mejoras
+* Aplicar MinIO como Data Lake
+* Dashboards interactivos
+* Desarrollar automatismo con tecnicas de machine learning
+* News letter automatizada con descubrimientos relevantes periodicos
+* Creación de web de caracter dibulgativo y automatizada con noticias
+
+---
+
+### Autor
+
+Proyecto desarrollado como entorno de análisis y visualización Big Data utilizando tecnologías modernas de contenedorización y observabilidad. Presentado como Proyecto de final de 'curso de especialización en Big Data y Inteligencia Artificial' del centro educativo online 'Ilerna'. Desarrollado por `Clotrack` un servidor.
