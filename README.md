@@ -66,18 +66,20 @@ BCSS/
 
 ---
 
+## Manual de instalación 
+
 ### 1. Instalación del proyecto
 
 - Acceder al directorio .devcontainer
 Tanto si trabajamos en local como en Codespaces, el primer paso será movernos desde la terminal a la carpeta .devcontainer.
     
-'cd .devcontainer'
+`cd .devcontainer`
 
 ### 2. Levantar los contenedores Docker
 
 Ejecutamos el siguiente comando:
 
-'docker-compose up'
+`docker-compose up`
 
 Este proceso puede tardar varios minutos la primera vez, ya que Docker debe:
 
@@ -113,4 +115,152 @@ Cuando finalice, veremos varios puertos abiertos en la pestaña Ports y los serv
 | `git clone <url>`                 | Clonar el repositorio                         |
 
 ---
+
+### Ejecutar el script principal
+
+Una vez desplegados los contenedores:
+
+    1. Abrimos una nueva terminal
+    2. Nos aseguramos de estar en la carpeta raíz del proyecto
+    3. Ejecutamos el script principal
+
+Windows: 
+
+`py main.py`
+
+Linux / Codespaces:
+
+`python main.py`
+
+Cuando el script termine correctamente, el sistema estará completamente operativo.
+
+![Contenedores operativos](img/ManualCompletadoMain.png)
+
+---
+
+### Solución a posibles problemas
+
+| Comando                               | Descripción                                   |
+| ------------------------------------- | --------------------------------------------- |
+| `docker logs <nombre_del_contenedor>` | Ver logs de un contenedor                     |
+| `docker-compose down -v`              | Reiniciar completamente el entorno            |
+| `docker-compose down`                 | Detener los contenedores                      |
+
+---
+
+## Manual de Usuario
+
+Este apartado describe el uso de:
+
+    * Grafana
+    * API REST del proyecto
+
+Se asume que:
+
+✅ Los contenedores Docker están funcionando
+✅ El script main.py se ha ejecutado correctamente
+
+### Acceso a Grafana
+
+### 1. Abrir la pestaña de puertos
+
+En VSCode / Codespaces, accedemos a la pestaña: 'PORTS'
+
+Buscamos el puerto '3000'
+
+![Contenedores operativos](img/ManualPuertos.png)
+
+Y pulsamos el icono con forma de planeta 🌍 para abrir Grafana en el navegador.
+
+### Inicio de sesión en Grafana
+
+Las credenciales por defecto son:
+
+| Usuario | Contraseña |
+| ------- | ---------- |
+| admin   | admin      |
+
+Tras iniciar sesión:
+
+    * Ignoramos el aviso de seguridad
+    * Pulsamos Skip
+    * Cerramos el asistente de bienvenida
+
+###  Configuración de la base de datos
+
+Grafana puede arrancar antes que PostgreSQL y la conexión inicial puede no establecerse correctamente.
+
+Para solucionarlo:
+
+    1. Ir al menú lateral izquierdo
+    2. Entrar en: 'Connections > Data Sources'
+    3. Seleccionar PostgreSQL
+    4. Pulsar: 'Save & Test'
+
+Si todo es correcto aparecerá un mensaje verde confirmando la conexión.
+
+![Refrescar la conexión de Grafana](img/ManualGrafanaConexionDDBB.png)
+
+---
+
+### Dashboards
+
+En el menú lateral izquierdo: 'Dashboards'
+
+Encontraremos los cuadros de mando ya configurados:
+
+    * Datos procesados
+    * Datos EDA / Curados
+
+![Cuadros de mando personalizados](img/ManualDashboardsGeneral.png)
+
+Entramos en cualquiera de ellos y Al entrar por primera vez es posible que algunas gráficas aparezcan vacías o con errores.
+
+Pasos para refrescar
+    1. Pulsar los tres puntos `⋮`
+    2. Seleccionar: 'Edit'
+    3. Pulsar boto ubicado junto al rango temporal: 'Refresh'
+
+De no haberse visualizado aun los datos seguir con el siguiente paso sino pasar este suguiente paso.
+
+Ejecutar consulta manualmente si los datos siguen sin aparecer, pulsar el botón azul que se encuentra abajo a la derecha: 'Run Query' 
+
+![Ejecutar de nuevo la Query](img/ManualDashboardsRunQuery.png)
+
+Volver al Dashboard para regresar al cuadro de mando pulsando el boton de arriba a la izquierda: 'Back to Dashboard'
+
+![Retroceder a cuadro de mandos](img/ManualDashboardsVolver.png)
+
+Repetir con cada grafica sin cargar.
+
+---
+
+### Acceso a la API
+
+De la misma manera que con Grafana desde la pestaña Ports en la terminal de VSCode / Codespaces, accedemos a la pestaña: 'PORTS'
+
+Buscamos el puerto '8000'
+
+![Puertos operativos](img/ManualPuertos.png)
+
+Y pulsamos el icono con forma de planeta 🌍 para abrir Grafana en el navegador.
+
+Una vez en la web visualizaremos una ventana negra que nos avisa de que todo esta ok.
+
+Para acceder a la documentación Swagger añadimos /docs al final de la URL de nuestro navegador.
+
+![API direccionar /docs](img/ManualAPIDirección.png)
+
+Entraremos automáticamente en la documentación interactiva Swagger UI.
+
+Desde ella podremos:
+
+    * Consultar endpoints
+    * Ejecutar peticiones
+    * Descargar datos JSON
+    * Explorar la base de datos
+
+![API pantalla MAIN](img/ManualAPIMain.png)
+
+![API Descarga de datos JSON](img/ManualAPIDescarga.png)
 
